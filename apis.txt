@@ -1,0 +1,11 @@
+https://developer.marvel.com/docs#!/public/getCreatorCollection_get_0
+
+http://quotes.rest/ 
+
+https://api.nasa.gov/ en autenticación DEMO_KEY rate limits
+
+https://www.thecocktaildb.com/api.php no necesita pi key ni autorización
+
+https://www.freetogame.com/api-doc no necesita key
+
+https://jsonplaceholder.typicode.com/posts

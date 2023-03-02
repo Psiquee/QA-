@@ -1,0 +1,41 @@
+
+  
+CREATE TABLE alumnos (
+   id_alumnos INT PRIMARY KEY,
+    nombre_apellido VARCHAR(50),
+    telefono VARCHAR(13),
+  curso VARCHAR (1)
+);
+   
+   INSERT INTO 'alumnos' VALUES (1, 'Carlos_Galvan', '+54221765986'
+, 'A'), (2, 'Gonzalez_Eduardo', '+5411657398', 'B'), 
+(3, 'Mariano_Ferrero', '+5411964386', 'C'),
+ (4,'Maria_Barragan', '+5422359853', 'A');
+
+
+CREATE TABLE materias (
+    id_materias INT PRIMARY KEY,
+    nombre_materia VARCHAR(25)
+);
+INSERT INTO 'Materias' VALUES (1,  'PDL'), (2,  'matematicas'), (3, 'ciencias naturales'), (4, 'ciencias sociales'), (5,'CDC'), (6, 'orientacion vocacional'),
+ (7, 'ingles'), (8, 'filosofia'),(9, 'artistica');
+
+
+CREATE TABLE notas (
+    id_notas INT PRIMARY KEY,
+    id_alumnos INT,
+    id_materias INT,
+    nota FLOAT,
+    FOREIGN KEY (id_alumnos) REFERENCES alumnos(id_alumnos),
+    FOREIGN KEY (id_materias) REFERENCES materias(id_materias)
+);
+INSERT INTO 'Notas' (id_notas,
+    id_alumnos ,
+    id_materias ,
+    nota ) VALUES (1, 1, 1, 8), (2, 2, 2, 6), (3, 3, 3, 5), (4, 4, 4, 6), (5,3 ,5, 7), (6, 2 ,6 , 7), (7, 4, 7, 4), (8, 3, 8 , 8),(9, 2 , 9, 10);
+
+
+SELECT notas.id_notas, alumnos.nombre_apellido, materias.nombre_materia, notas.nota 
+FROM notas 
+JOIN alumnos ON notas.id_alumnos = alumnos.id_alumnos 
+JOIN materias ON notas.id_materias = materias.id_materias;
